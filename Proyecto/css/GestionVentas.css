@@ -1,0 +1,49 @@
+header {
+    border-bottom: 100px solid #90ee90;
+    position: relative;
+    font-family:Helvetica, Arial, sans-serif;
+
+    
+  }
+  .encima-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 130px;
+    z-index: 1;
+  }
+  .nombre-logo{
+    
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+  }
+  body{
+    font-family:Helvetica, Arial, sans-serif;
+  }
+
+ figcaption {
+    position: absolute;
+    font-family:Helvetica, Arial, sans-serif;
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+  }
+  .boton {
+  
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
