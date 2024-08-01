@@ -1,305 +1,125 @@
-
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    border-bottom: 100px solid #ADEFA0;
-    font-family:Helvetica, Arial, sans-serif;
-    z-index: 999;
-  }
-  
-  .encima-image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100px;
-    width: 130px;
-    z-index: 1;
-  }
-  .nombre-logo{
-    
-    position: absolute;
-    z-index: 1;
-    top: 20px;
-    left:0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    text-align: center;
-  }
-  body{
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body h1{
-    font-family:Helvetica, Arial, sans-serif;
-    position: relative;
-    top: 18%;
-  }
-  body .menu-circular {
-    position: relative;
-    width: 500px; /* Ajusta el tamaño del menú */
-    height: 500px; /* Ajusta el tamaño del menú */
-    left: 0;
-    top: 20%;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 50%; /* Convierte el menú en una forma circular */
-    background-image: url("http://www.w3.org/2000/svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden; /* Oculta el contenido que se desborde del menú */
-  }
+  position: relative; /* Cambiado de absolute a relative */
+  width: 100%;
+  background-color: #ADEFA0;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 10px; /* Ajuste de padding para la franja verde */
+}
 
-  
-  body .menu-circular .opcion1 {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 20%;
-    top: 0;
-    bottom: 55%;
-    right: 0;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    line-height: 20px; /* Centra verticalmente el texto de cada opción */
-    text-align: center;
-    text-decoration: none;
-    background-color: #48c26c;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
+.encima-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 130px;
+  z-index: 1;
+}
 
-  body .menu-circular .opcion2 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 70%;
-    top: 0;
-    bottom: 30%;
-    right: 0;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body .menu-circular .opcion3 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 85%;
-    top: 60%;
-    bottom: 50%;
-    right: 0;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body .menu-circular .opcion4 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 70%;
-    top: 70%;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body .menu-circular .opcion5 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 20%;
-    top: 95%;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body .menu-circular .opcion6 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: 65%;
-    bottom: 0;
-    right: 30%;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body .menu-circular .opcion7 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: 25%;
-    bottom: 10%;
-    right: 50%;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body .menu-circular .opcion8 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: 0;
-    bottom: 30%;
-    right: 30%;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 100px; /* Ajusta el tamaño de cada opción */
-    height: 100px; /* Ajusta el tamaño de cada opción */
-    
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  body .menu-circular .opcion9 {
-    text-decoration: none;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 50%;
-    top: 62%;
-    bottom: 50%;
-    right: 50%;
-    margin: auto;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(0deg); /* Centra cada opción y las rota en un ángulo inicial de 0 grados */
-    width: 120px; /* Ajusta el tamaño de cada opción */
-    height: 120px; /* Ajusta el tamaño de cada opción */
-    text-align: center;
-    background-color: #48c26c;
-    border: 1px solid #dddddd;
-    border-radius: 50%; /* Convierte cada opción en una forma circular */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al rotar las opciones */
-    z-index: 1;
-    color: black;
-    font-family:Helvetica, Arial, sans-serif;
-  }
-  
-  body .menu-circular .opcion1:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion2:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion3:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion4:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion5:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion6:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion7:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion8:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
-  body .menu-circular .opcion9:hover {
-    transform: translate(-50%, -50%) rotate(360deg); /* Rota cada opción en 360 grados al pasar el mouse por encima */
-  }
+.nombre-logo {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  position: relative;
+  top: 18%;
+}
+
+body .menu-circular {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  left: 0;
+  top: 20%;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  background-image: url("http://www.w3.org/2000/svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+body .menu-circular .opcion1,
+body .menu-circular .opcion2,
+body .menu-circular .opcion3,
+body .menu-circular .opcion4,
+body .menu-circular .opcion5,
+body .menu-circular .opcion6,
+body .menu-circular .opcion7,
+body .menu-circular .opcion8,
+body .menu-circular .opcion9 {
+  text-decoration: none;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  background-color: #48c26c;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body .menu-circular .opcion1 {
+  left: 20%;
+  top: 0;
+  bottom: 55%;
+  right: 0;
+}
+
+body .menu-circular .opcion2 {
+  left: 70%;
+  top: 0;
+  bottom: 30%;
+  right: 0;
+}
+
+body .menu-circular .opcion3 {
+  left: 85%;
+  top: 60%;
+  bottom: 50%;
+  right: 0;
+}
+
+body .menu-circular .opcion4 {
+  left: 70%;
+  top: 70%;
+  bottom: 0;
+  right: 0;
+}
+
+body .menu-circular .opcion5 {
+  left: 20%;
+  top: 95%;
+  bottom: 0;
+  right: 0;
+}
+
+body .menu-circular .opcion6 {
+  left: 0;
+  top: 65%;
+  bottom: 0;
+  right: 30%;
+}
