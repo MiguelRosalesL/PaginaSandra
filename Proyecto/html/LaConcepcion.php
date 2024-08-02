@@ -58,10 +58,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
     <div class="menu-circular">
 
+
+        <a href="GestionVentas.php" class="opcion1"> Gestion de ventas</a>  
+
     <?php
         if ($tipo_usuario==1) {
     ?>
-        <a href="GestionVentas.php" class="opcion1"> Gestion de ventas</a>  
         <a href="#" class="opcion2">Gestion de compras</a>
         <a href="#" class="opcion3">Gestion de clientes</a>
         <a href="#" class="opcion4">Gestion de contabilidad</a>
