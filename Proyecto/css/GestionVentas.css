@@ -47,3 +47,24 @@ header {
     margin-right: 10px;
   }
 
+  .Modificar{
+    width: auto;
+    margin: 5px;
+    color: black;
+    background-color: #F4D03F;
+    border-color: #F4D03F;
+  }
+  .Modificar:hover{
+    background-color: #F1C40F;
+  }
+
+  .Eliminar{
+    width: auto;
+    margin: 5px;
+    color:black;
+    background-color: #E53935;
+    border-color: #E53935;
+  }
+  .Eliminar:hover{
+    background-color: #D50000;
+  }

@@ -36,12 +36,15 @@ try {
 
     // Recorrer los elementos del carrito y guardarlos en la tabla "elementos"
     foreach ($data->carrito as $item) {
+        $cantidad = floatval($item->cantidad); // Asegurarse de que la cantidad es un número decimal
+        $precio = floatval($item->precio); // Asegurarse de que el precio es un número decimal
+
         $stmtElemento = $pdo->prepare("INSERT INTO elementos (pedido_id, nombre_item, cantidad, precio) 
                                       VALUES (:pedido_id, :nombre_item, :cantidad, :precio)");
         $stmtElemento->bindParam(':pedido_id', $pedidoId);
         $stmtElemento->bindParam(':nombre_item', $item->item);
-        $stmtElemento->bindParam(':cantidad', $item->cantidad);
-        $stmtElemento->bindParam(':precio', $item->precio);
+        $stmtElemento->bindParam(':cantidad', $cantidad);
+        $stmtElemento->bindParam(':precio', $precio);
         $stmtElemento->execute();
     }
 
@@ -50,4 +53,5 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
+
 ?>
