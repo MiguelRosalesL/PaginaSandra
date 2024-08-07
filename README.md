@@ -4,4 +4,6 @@ Esta pagina la cree en Visual Studio Code utilizando:
 * PHP
 * Python
 ---
-El objetivo es probar distintos frameworks
+El objetivo es usar diferentes lenguajes de programación como PHP y Python para crear
+una conexión a una Base de Datos Local y crear graficas a traves de Python con los 
+datos que se encuentran registrados
