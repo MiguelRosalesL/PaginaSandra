@@ -1,9 +1,7 @@
 <?php
 include "conexion.php";
-
 // Obtener el ID del pedido a eliminar
 $id = $_POST['id'];
-
 // Iniciar una transacción
 $mysqli->begin_transaction();
 
@@ -36,8 +34,6 @@ try {
     $mysqli->rollback();
     echo "Error: " . $e->getMessage();
 }
-
 // Cerrar la conexión
 $mysqli->close();
-
 ?>

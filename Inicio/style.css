@@ -5,11 +5,40 @@ body {
 }
 
 header {
-  background: linear-gradient(to bottom,#82E0AA ,#2ECC71 ); /* Degradado con colores pasteles de amarillo y verde */
-  color: #333333;
-  padding: 22px;
+
+  padding: 60px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  background-image: url(images/fondoHeader.jpg);
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen */
+
+}
+
+.logo {
+  width: 200px;
+  height: 200px; /* Para mantener la proporción del logo */
+
+}
+.overlock-regular {
+  font-family: "Overlock", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cursor {
+  font-family: monospace;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black;
+  display: inline-block;
+  animation: blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
 }
 
 h1 {
@@ -77,7 +106,7 @@ main {
 
 
 footer {
-  background-color:#333;
+  background-color: #d12a2a;
   color: #ffffff;
   padding: 5px;
   text-align: center;
@@ -179,6 +208,13 @@ li {
   color: #555454;
 }
 
+.grey-qo-regular {
+  font-family: "Grey Qo", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
 .image-container {
   margin-top: 10px; /* Contorno de la descripción */
   padding: 5px; /* Espacio interno de la descripción */
@@ -200,7 +236,7 @@ li {
 }
 
 .modal-content {
-  background-color: #919191;
+  background-color: #fffcfc;
   margin: 15% auto;
   padding: 20px;
   width: 80%;
@@ -228,10 +264,8 @@ li {
 }
 
 .vermas {
-  background-color: #FFF176 ; /* Amarillo pastel */
-  border: 2px solid #F0E68C; /* Amarillo más claro */
   border-radius: 20px;
-  color: #555454;
+  color: #ffffff;
   width: 180px;
   height: 40px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -242,12 +276,7 @@ li {
 }
 
 .vermas:hover {
-  background-color:#FFFF66; /* Amarillo más claro al pasar el mouse */
   transform: scale(1.05); /* Efecto de escala al pasar el mouse */
-}
-
-.vermas:active {
-  background-color: #FFFF00; /* Amarillo pastel original al presionar el botón */
 }
 
 
@@ -384,4 +413,41 @@ input:invalid + .error-message {
 
 .custom-alert-content button:hover {
   background-color:#FFF176; 
+}
+
+/*CURSOR*/
+
+.slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; /* Ajusta la altura según sea necesario */
+}
+
+
+
+.typing {
+  width: auto;
+}
+
+.borde{
+  margin: 5rem;
+  margin-left: -20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://img.freepik.com/vector-gratis/vector-fondo-decorativo-textura-acuarela-suave-colorido_1055-12347.jpg);
+}
+
+
+.envio {
+  float: right;
+  margin-left: 20px; /* Ajusta el margen según sea necesario */
+  margin-bottom: 20px; /* Ajusta el margen según sea necesario */
+ 
+  height: auto;
+  
+   margin-left: 20px; /* Ajusta el margen según sea necesario */
+  max-width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
+  order: 2; /* Asegura que la imagen esté a la derecha */
 }

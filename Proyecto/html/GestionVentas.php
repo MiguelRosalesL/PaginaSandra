@@ -20,7 +20,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         table {
             width: 95%;
             border-collapse: collapse;
-            margin: 0 auto; /* Centra el contenedor */
+            margin: 0 auto;
+            /* Centra el contenedor */
         }
 
         th,
@@ -111,9 +112,19 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         <?php endforeach; ?>
     </table>
 
-    <!-- Agregar un elemento para mostrar la gráfica de total de pedidos -->
-    <h2>Gráfica de Total de Pedidos</h2>
-    <img src="http://localhost:5000/grafica" alt="Gráfica de Total de Pedidos">
+    <!-- Agregar un elemento para mostrar la gráfica de total de pedidos    -->
+    <center>
+        <h2>Gráfica de Total de Pedidos</h2>
+        <!-- <img src="http://127.0.0.1:5000/grafica1" alt="Gráfica de Total de Pedidos" style="max-width: 100%; height: auto;"> -->
+        <br>
+        <h2>Gráfica de Total de Ingresos</h2>
+        <!-- <img src="http://127.0.0.1:5000/grafica2" alt="Gráfica de Total de Ingresos" style="max-width: 100%; height: auto;"> -->
+        <br>
+        <h2>Gráfica Ventas por Mes</h2>
+        <img src="http://127.0.0.1:5000/grafica_ventas_mes" alt="Gráfica de Ventas por Mes" style="max-width: 100%; height: auto;">
+    </center>
+
+
 
     <script>
         // Función para recargar la página después de 5 segundos

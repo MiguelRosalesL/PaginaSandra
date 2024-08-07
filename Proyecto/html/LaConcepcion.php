@@ -11,7 +11,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 <html>
 
 <head>
-    <title>La Concepcion</title>
+    <title>Mi Duz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -28,21 +28,18 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 <div class="container">
     <div class="d-flex justify-content-end">
       <div class="dropdown text-end" style="position: absolute; top:30;">
-        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> <?php echo $nombre; ?>
+        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+            <?php echo $nombre; ?>
           <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
         <ul class="dropdown-menu text-small" >
-          <li><a class="dropdown-item" href="#">New project...</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
         </ul>
       </div>
 
   </div>
     <img src="/PaginaSandra/Proyecto/images/image1.jpeg" alt="Logo" class="encima-image">
-    <h1 class="nombre-logo"> La Concepcion</h1>
+    <h1 class="nombre-logo">Mi Duz</h1>
 
 </header>
 
@@ -57,8 +54,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     
 
     <div class="menu-circular">
-
-
         <a href="GestionVentas.php" class="opcion1"> Gestion de ventas</a>  
 
     <?php
@@ -72,7 +67,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         <a href="#" class="opcion7">Gestion de calidad</a>
         <a href="#" class="opcion8">Marketing</a>
         <a href="#" class="opcion9">Gestion de finanzas</a>
-    
+
     <?php
         }
     ?> 
