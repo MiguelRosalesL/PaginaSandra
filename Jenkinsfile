@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/MiguelRosalesL/PaginaSandra', credentialsId: 'github-token'
+                git url: 'https://github.com/MiguelRosalesL/PaginaSandra'
             }
         }
         stage('Build') {
