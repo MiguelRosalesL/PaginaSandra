@@ -1,58 +1,51 @@
 pipeline {
     agent any
+
     triggers {
-        // Activa el pipeline cuando se detecta un nuevo commit en el repositorio
-        githubPush()
+        // Este trigger se activa con los eventos de push desde GitHub
+        githubPush() 
     }
+
     stages {
-        stage('Checkout') {
-            steps {
-                // Clona el repositorio
-                git url: 'https://github.com/MiguelRosalesL/PaginaSandra', branch: 'main'
-            }
-        }
-        stage('Check for PHP Files') {
+        stage('Check for File Types') {
             steps {
                 script {
-                    // Verifica si el commit contiene archivos .php en Windows
-                    def phpFiles = bat(
-                        script: 'git diff --name-only HEAD~1 | findstr /I "\.php$" || echo "No PHP files detected""', 
-                        returnStdout: true
-                    ).trim()
-                    
-                    if (phpFiles.contains(".php")) {
-                        error("Commit contiene archivos .php, lo cual no está permitido:\n${phpFiles}")
+                    // Obtener la lista de archivos modificados
+                    def modifiedFiles = sh(script: 'git diff --name-only HEAD~1', returnStdout: true).trim().split('\n')
+
+                    // Variables para contar tipos de archivos
+                    def phpFiles = []
+                    def otherFiles = []
+
+                    // Clasificar los archivos según su extensión
+                    modifiedFiles.each { file ->
+                        if (file.endsWith('.php')) {
+                            phpFiles << file
+                        } else {
+                            otherFiles << file
+                        }
+                    }
+
+                    // Mostrar resultados
+                    if (phpFiles) {
+                        echo "Detected PHP files: ${phpFiles.join(', ')}"
                     } else {
-                        echo 'No PHP files detected, proceeding with the pipeline.'
+                        echo "No PHP files detected"
+                    }
+
+                    if (otherFiles) {
+                        echo "Detected other files: ${otherFiles.join(', ')}"
+                    } else {
+                        echo "No other files detected"
                     }
                 }
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                // Agrega aquí tus comandos de construcción
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                // Agrega aquí tus comandos de prueba
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Agrega comandos de despliegue si los tienes
-            }
-        }
     }
+
     post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed.'
+        always {
+            echo "Pipeline finished."
         }
     }
 }
