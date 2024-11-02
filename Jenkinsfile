@@ -14,26 +14,16 @@ pipeline {
         stage('Check for PHP Files') {
             steps {
                 script {
-                    // Verificar si hay commits previos para hacer el diff
-                    def previousCommit = sh(
-                        script: 'git rev-parse HEAD~1 || true', 
-                        returnStatus: true
-                    )
-
-                    if (previousCommit == 0) {
-                        // Si hay un commit previo, busca archivos .php
-                        def phpFiles = sh(
-                            script: 'git diff --name-only HEAD~1 | grep \\.php$ || true', 
-                            returnStdout: true
-                        ).trim()
-                        
-                        if (phpFiles) {
-                            error("Commit contiene archivos .php, lo cual no está permitido:\n${phpFiles}")
-                        } else {
-                            echo 'No PHP files detected, proceeding with the pipeline.'
-                        }
+                    // Verifica si el commit contiene archivos .php en Windows
+                    def phpFiles = bat(
+                        script: 'git diff --name-only HEAD~1 | findstr /I "\\.php$" || echo No PHP files detected', 
+                        returnStdout: true
+                    ).trim()
+                    
+                    if (phpFiles.contains(".php")) {
+                        error("Commit contiene archivos .php, lo cual no está permitido:\n${phpFiles}")
                     } else {
-                        echo 'No previous commit found to compare changes, skipping PHP check.'
+                        echo 'No PHP files detected, proceeding with the pipeline.'
                     }
                 }
             }
@@ -42,14 +32,12 @@ pipeline {
             steps {
                 echo 'Building...'
                 // Agrega aquí tus comandos de construcción
-                // Ejemplo: sh 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
                 // Agrega aquí tus comandos de prueba
-                // Ejemplo: sh 'mvn test'
             }
         }
         stage('Deploy') {
