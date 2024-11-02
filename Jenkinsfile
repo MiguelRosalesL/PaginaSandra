@@ -14,16 +14,26 @@ pipeline {
         stage('Check for PHP Files') {
             steps {
                 script {
-                    // Verificar si hay archivos .php en el commit
-                    def phpFiles = sh(
-                        script: 'git diff --name-only HEAD~1 | grep \\.php$ || true', 
-                        returnStdout: true
-                    ).trim()
-                    
-                    if (phpFiles) {
-                        error("Commit contiene archivos .php, lo cual no está permitido:\n${phpFiles}")
+                    // Verificar si hay commits previos para hacer el diff
+                    def previousCommit = sh(
+                        script: 'git rev-parse HEAD~1 || true', 
+                        returnStatus: true
+                    )
+
+                    if (previousCommit == 0) {
+                        // Si hay un commit previo, busca archivos .php
+                        def phpFiles = sh(
+                            script: 'git diff --name-only HEAD~1 | grep \\.php$ || true', 
+                            returnStdout: true
+                        ).trim()
+                        
+                        if (phpFiles) {
+                            error("Commit contiene archivos .php, lo cual no está permitido:\n${phpFiles}")
+                        } else {
+                            echo 'No PHP files detected, proceeding with the pipeline.'
+                        }
                     } else {
-                        echo 'No PHP files detected, proceeding with the pipeline.'
+                        echo 'No previous commit found to compare changes, skipping PHP check.'
                     }
                 }
             }
