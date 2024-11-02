@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/MiguelRosalesL/PaginaSandra'
+                git url: 'https://github.com/MiguelRosalesL/PaginaSandra.git'
             }
         }
         stage('Build') {
