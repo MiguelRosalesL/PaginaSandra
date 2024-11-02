@@ -16,7 +16,7 @@ pipeline {
                 script {
                     // Verifica si el commit contiene archivos .php en Windows
                     def phpFiles = bat(
-                        script: 'git diff --name-only HEAD~1 | grep \.php$ || echo No PHP files detected', 
+                        script: 'git diff --name-only HEAD~1 | grep ".php$" || echo "No PHP files detected"', 
                         returnStdout: true
                     ).trim()
                     
