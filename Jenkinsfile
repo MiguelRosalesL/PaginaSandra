@@ -16,7 +16,7 @@ pipeline {
                 script {
                     // Verificar si hay archivos .php en el commit
                     def phpFiles = sh(
-                        script: "git diff --name-only HEAD~1 | grep '\\.php$' || true", 
+                        script: 'git diff --name-only HEAD~1 | grep \\.php$ || true', 
                         returnStdout: true
                     ).trim()
                     
